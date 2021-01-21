@@ -5,10 +5,10 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <li class="nav-item {{request()->is('create') ? 'active' : ''}}">
         <a class="nav-link" href="/create">Create</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{request()->is('edit') ? 'active' : ''}}">
         <a class="nav-link" href="/edit">Edit</a>
       </li>
     </ul>
