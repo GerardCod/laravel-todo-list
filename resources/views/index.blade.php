@@ -13,64 +13,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
-      <tr>
-        <td>To do list....To do list....To do list....To do list....To do list....To do list....</td>
-        <td>01</td>
-        <td class="action_td">
-            <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-      </tr>
+      @foreach($targets as $target)
+        <tr>
+          <td>{{$target->name}}</td>
+          <td>{{$target->ranking}}</td>
+          <td class="action_td">
+              <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
+              <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
+          </td>
+        </tr>
+      @endforeach
     </tbody>
   </table>
   
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
+  {{$targets->links()}}
 @endsection
 
 
