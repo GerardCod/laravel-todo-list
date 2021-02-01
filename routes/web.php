@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Target;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
 
@@ -21,7 +21,14 @@ Route::get('/greetings', function() {
     return json_encode(array('greetings' => 'Hello from Laravel'));
 });
 
-Route::get('/democontroller', 'Democontroller@someFunction');
-Route::get('/index', 'TargetController@index');
+Route::get('/democontroller', 'Democontroller@someFunction'); */
+Route::get('/', 'TargetController@index');
+/* Route::get('/', function () {
+    $targets = Target::all();
+    
+    foreach($targets as $element ) {
+        echo "<li>$element</li>";
+    }
+}); */
 Route::get('/create', 'TargetController@create');
 Route::get('/edit', 'TargetController@edit');
