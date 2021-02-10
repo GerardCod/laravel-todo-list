@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Target;
+use App\Http\Requests\TargetRequest;
 
 class TargetController extends Controller
 {
@@ -20,5 +20,13 @@ class TargetController extends Controller
 
     public function edit() {
         return view('edit');
+    }
+
+    public function store(TargetRequest $request) {
+        Target::create([
+            'name' => $request->input('name'),
+            'ranking' => $request->input('ranking')
+        ]);
+        return view('create');
     }
 }
