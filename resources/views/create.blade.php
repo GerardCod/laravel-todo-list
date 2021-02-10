@@ -4,15 +4,23 @@
 
   <div class="container">
 
-    <form action="/submit_create">
+    <form action="/create" method="POST">
       
-      <button type="submit" class="btn btn-primary right action_submit">Create</button>
+      @if (count($errors) > 0)
+        <div class="alert alert-danger">
+          @foreach ($errors->all() as $message)
+            <li>{{$message}}</li>
+          @endforeach    
+        </div>
+      @endif
 
+      <button type="submit" class="btn btn-primary right action_submit">Create</button>
+      @csrf
       <div class="clearfix"></div>
       
       <div class="form-group">
         <label for="usr">Target:</label>
-        <input type="text" class="form-control" id="usr" name="target">
+        <input type="text" class="form-control" id="usr" name="name">
       </div>
       <div class="form-group">
         <label for="pwd">Ranking:</label>
