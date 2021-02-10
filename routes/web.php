@@ -31,4 +31,5 @@ Route::get('/', 'TargetController@index');
     }
 }); */
 Route::get('/create', 'TargetController@create');
+Route::post('/create', 'TargetController@store');
 Route::get('/edit', 'TargetController@edit');
