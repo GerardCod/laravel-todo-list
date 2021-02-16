@@ -18,8 +18,8 @@ class TargetController extends Controller
         return view('create');
     }
 
-    public function edit() {
-        return view('edit');
+    public function edit(Target $target) {
+        return view('edit', compact('target'));
     }
 
     public function store(TargetRequest $request) {
@@ -28,5 +28,15 @@ class TargetController extends Controller
             'ranking' => $request->input('ranking')
         ]);
         return view('create');
+    }
+
+    public function update(TargetRequest $request, Target $target) {
+        // dd($request->all());
+        Target::where('id', $target->id)
+                ->update([
+                    'name' => $request->name,
+                    'ranking' => $request->ranking
+                ]);
+        return redirect('/');
     }
 }

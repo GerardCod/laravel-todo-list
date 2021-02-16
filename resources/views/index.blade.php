@@ -2,7 +2,7 @@
 @section('content')
 <h2><center>To do list</center></h2>
   
-  <a href="#"><button type="button" class="btn btn-primary right action_create">Create</button></a>
+  <a href="/create"><button type="button" class="btn btn-primary right action_create">Create</button></a>
              
   <table class="table table-hover">
     <thead>
@@ -18,7 +18,7 @@
           <td>{{$target->name}}</td>
           <td>{{$target->ranking}}</td>
           <td class="action_td">
-              <a href="#"><button type="button" class="btn btn-info">Edit</button></a>
+              <a href="/edit/{{$target->id}}"><button type="button" class="btn btn-info">Edit</button></a>
               <a href="#"><button type="button" class="btn btn-danger">Delete</button></a>
           </td>
         </tr>

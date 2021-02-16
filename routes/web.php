@@ -32,4 +32,5 @@ Route::get('/', 'TargetController@index');
 }); */
 Route::get('/create', 'TargetController@create');
 Route::post('/create', 'TargetController@store');
-Route::get('/edit', 'TargetController@edit');
+Route::put('/edit/{target}', 'TargetController@update');
+Route::get('/edit/{target}', 'TargetController@edit');
