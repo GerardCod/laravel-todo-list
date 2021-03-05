@@ -39,4 +39,10 @@ class TargetController extends Controller
                 ]);
         return redirect('/');
     }
+
+    public function delete(Target $target) {
+        Target::where('id', $target->id)
+                ->delete();
+        return back();
+    }
 }

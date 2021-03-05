@@ -34,3 +34,4 @@ Route::get('/create', 'TargetController@create');
 Route::post('/create', 'TargetController@store');
 Route::put('/edit/{target}', 'TargetController@update');
 Route::get('/edit/{target}', 'TargetController@edit');
+Route::get('/delete/{target}', 'TargetController@delete');
